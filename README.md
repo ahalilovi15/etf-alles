@@ -1,4 +1,4 @@
-# etf-Codes
+# etf-Codes - ETF SA
 ETF SA - Zadaće/Tutorijali/Projekti sa sljedećih predmeta:
 - Osnove računarstva 2016/2017 - Tutorijali 
 - Tehnike programiranja 2016/2017 - Tutorijali
