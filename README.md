@@ -6,3 +6,4 @@ ETF SA - Zadaće/Tutorijali/Projekti sa sljedećih predmeta:
 - Razvoj programskih rješenja 2017/2018 - Projekat
 - Osnove baza podataka 2017/2018 - Projekat
 - Osnove računarskih mreža 2017/2018 - Zadaća
+- Osnove operacionih istraživanja 2018/2019 - Labovi
