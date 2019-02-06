@@ -1,5 +1,9 @@
 # etf-Codes - ETF SA
-ETF SA - Zadaće/Tutorijali/Projekti sa sljedećih predmeta:
+## Zadaće sa raznih predmeta koje su rađene u latexu:
+- Matematička Logika i Teorija Izračunljivosti
+- Diskretna Matematika 
+
+## Zadaće/Tutorijali/Projekti sa sljedećih predmeta:
 - Osnove računarstva 2016/2017 - Tutorijali 
 - Tehnike programiranja 2016/2017 - Tutorijali
 - Algoritmi i strukture podataka 2017/2018 - Tutorijali/Zadaće/Pripreme
