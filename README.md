@@ -1,6 +1,6 @@
 ### etf-alles - ETF SA
 ## Zadaće rađene u latexu sa sljedećih predmeta:
-- Matematička Logika i Teorija Izračunljivosti (MLTI) 2016/2017 - Zadaće
+- Matematička Logika i Teorija Izračunljivosti 2016/2017 - Zadaće
 - Diskretna Matematika 2017/2018 - Zadaće
 
 ## Zadaće/Tutorijali/Projekti sa sljedećih predmeta:
