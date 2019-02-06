@@ -1,4 +1,5 @@
-# etf-Codes - ETF SA
+# etf-loot - ETF SA
+Malo po malo..
 ## Zadaće sa raznih predmeta koje su rađene u latexu:
 - Matematička Logika i Teorija Izračunljivosti
 - Diskretna Matematika 
