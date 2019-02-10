@@ -1,15 +1,14 @@
-### etf-alles - ETF SA
-## Zadaće rađene u latexu sa sljedećih predmeta:
-- Matematička Logika i Teorija Izračunljivosti 2016/2017 - Zadaće
-- Diskretna Matematika 2017/2018 - Zadaće
-
-## Zadaće/Tutorijali/Projekti sa sljedećih predmeta:
-- Osnove računarstva 2016/2017 - Tutorijali 
-- Tehnike programiranja 2016/2017 - Tutorijali
-- Algoritmi i strukture podataka 2017/2018 - Tutorijali/Zadaće/Pripreme
-- Razvoj programskih rješenja 2017/2018 - Projekat
-- Osnove baza podataka 2017/2018 - Projekat
-- Osnove računarskih mreža 2017/2018 - Zadaće
-- Osnove operacionih istraživanja 2018/2019 - Labovi/Zadaće
-- Verifikacija i validacija softvera 2018/2019 - Zadaće/TDD/Unit-Testing/Metrike/QA and a lot more..
-- Računarsko modeliranje i simulacije 2018/2019 - Zadaće
+### Faculty of Electrical Engineering, University of Sarajevo
+## Tasks made in latex with the following items:
+- Mathematical Logic and Calculus Theory 2016/2017 - Tasks
+- Discrete Mathematics 2017/2018 - Tasks
+## Tasks / Tutorials / Projects with the following subjects:
+- Fundamentals of Computing 2016/2017 - Tutorials
+- Programming Techniques 2016/2017 - Tutorials
+- Algorithms and Data Structures 2017/2018 - Tutorials / Tasks / Preparations
+- Development of software solutions 2017/2018 - Project
+- Database Basics 2017/2018 - Project
+- Basics of computer networks 2017/2018 - Tasks
+- Basics of operational research 2018/2019 - Labs / Tasks
+- Software Verification and Validation 2018/2019 - Tasks / TDD / Unit-Testing / Metrics / QA and a lot more ..
+- Computer Modeling and Simulations 2018/2019 - Tasks
