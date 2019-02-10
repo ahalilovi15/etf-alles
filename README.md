@@ -1,4 +1,5 @@
 ### Faculty of Electrical Engineering, University of Sarajevo
+#### Department for Computer Science and Informatics
 ## Tasks made in latex from the following university classes:
 - Mathematical Logic and Calculus Theory 2016/2017 - Tasks
 - Discrete Mathematics 2017/2018 - Tasks
