@@ -6,7 +6,7 @@
 ## Tasks / Tutorials / Projects from the following university classes:
 - Fundamentals of Computing 2016/2017 - Tutorials
 - Programming Techniques 2016/2017 - Tutorials
-- Algorithms and Data Structures 2017/2018 - Tutorials / Tasks / Preparations
+- Algorithms and Data Structures 2017/2018 - Tutorials / Tasks / Preparation tasks
 - Development of software solutions 2017/2018 - Project
 - Database Basics 2017/2018 - Project
 - Basics of computer networks 2017/2018 - Tasks
