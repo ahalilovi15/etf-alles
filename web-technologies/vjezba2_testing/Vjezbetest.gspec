@@ -1,0 +1,24 @@
+@objects
+	meni	#meni
+	glavni  #glavni
+	desno   #desno
+	podnozje	#podnozje
+	zaglavlje   #zaglavlje
+	okvir   #okvir
+
+= Meni section =
+	meni:
+    	inside okvir
+    	above glavni 0px
+    	above desno 0px
+    	below zaglavlje 0px
+= Main section =
+	glavni:
+    	inside okvir
+    	left-of desno 0px
+    	above podnozje 0px
+    	below meni 0px
+
+	desno:
+    	inside okvir
+    	right-of glavni 0px

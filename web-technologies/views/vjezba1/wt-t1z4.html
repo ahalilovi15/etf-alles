@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/vjezba1/t1z4.css">
+
+    <title>Zadatak 4</title>
+  </head>
+  <body>
+
+    <h1 style="padding: 30px;">Unos privatnih podataka</h1>
+    <progress id="myProgress" value="20" max="100">
+    </progress>
+    <p>Korak </p><p id="kolikoBroj">1</p><p>od 5</p>
+    <br>
+    <p style="padding: 30px;">Datum rođenja:</p><input id="datum" class="z4" type="date"><br>
+    <p style="padding: 30px;">Email adresa: </p><input id="mail" class="z4" type="text"><br>
+    <div style="padding: 30px;">
+    <button onclick="moveNazad()">Nazad &lt;&lt;</button>
+    <button onclick="moveNaprijed()">Dalje >></button> 
+    </div>   
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+
+<script>
+
+moveNazad = () => {
+    if(document.getElementById("myProgress").value >= 40){
+         document.getElementById("myProgress").value -= 20;
+         let broj = Number(document.getElementById("kolikoBroj").textContent);
+         broj -= 1;
+         document.getElementById("kolikoBroj").textContent = broj;
+    }
+}
+
+moveNaprijed = () => {
+   if(document.getElementById("myProgress").value <= 80){ 
+       document.getElementById("myProgress").value += 20; 
+       let broj = Number(document.getElementById("kolikoBroj").textContent);
+       broj += 1;
+       document.getElementById("kolikoBroj").textContent = broj;
+    }
+}
+</script>
+  </body>
+</html>

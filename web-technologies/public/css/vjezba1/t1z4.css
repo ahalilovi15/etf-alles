@@ -1,0 +1,22 @@
+#myProgress {
+    margin-left: 30px;
+    margin-top: 30px;
+    width: 300px;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+}
+
+p {
+    display: inline;
+}
+
+.z4 {
+    height: 80%;
+    margin-left: -1%;
+}
+
+.invisible {
+    visibility: hidden;
+  }

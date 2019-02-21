@@ -1,0 +1,13 @@
+p:nth-of-type(2n) { color: green } 
+
+input[type=text] { background-color: gray }
+
+input[type=password] { background-color: black; color: white }
+
+input[type=password] + input { color: blue }
+
+p:hover { background-color: yellow }
+
+p:nth-of-type(4n) { text-decoration: underline }
+
+img+p { font-style: italic }
