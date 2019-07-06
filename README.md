@@ -14,5 +14,6 @@
 - Software Verification and Validation 2018/2019 - Tasks / TDD / Unit-Testing / Metrics / QA and a lot more ..
 - Computer Modeling and Simulations 2018/2019 - Tasks
 - Web technologies 2018/2019 - Tutorials
+- Administration of computer networks - Tasks / Project documentation
 
 #### Note that the info part is in English, while all the projects are in my native language Bosnian. #ad-populum
