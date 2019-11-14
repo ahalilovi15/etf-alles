@@ -21,7 +21,8 @@ cor(select(data, -Direction))
 
 # podjela seta, test set 2015 godina, trening set sve ostalo
 training <- data[data$Year != '2005', ]
-test <- data[data$Year == '2015', ]
+train_ind <- sample(seq_len(nrow(training)))
+test <- data[data$Year == '2005', ]
 
 # LDA na na osnovu Lag1 i Lag2
 lda.model <- lda(Direction ~ Lag1 + Lag2, data = data, subset = train_ind)
@@ -56,8 +57,6 @@ lda.pred <- predict(lda.model, test)
 
 # konfuzion matrix
 confusionMatrix(lda.pred$class, test$Direction)
-
-## Zadatak 2
 
 # QDA na na osnovu svih varijabli
 qda.model <- qda(Direction ~ ., data = data, subset = train_ind)
