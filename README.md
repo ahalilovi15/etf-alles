@@ -1,9 +1,9 @@
 ### Faculty of Electrical Engineering, University of Sarajevo
 #### Department for Computer Science and Informatics
-## Tasks that are done in latex from the following classes:
-- Mathematical Logic and Calculus Theory 2016/2017 - Tasks
-- Discrete Mathematics 2017/2018 - Tasks
-## Code based Tasks / Tutorials / Projects from the following classes:
+
+## Bachelor's
+- Mathematical Logic and Calculus Theory 2016/2017 - Tasks (Latex)
+- Discrete Mathematics 2017/2018 - Tasks (Latex)
 - Introduction to programming 2016/2017 - Tutorials
 - Programming Techniques 2016/2017 - Tutorials
 - Algorithms and Data Structures 2017/2018 - Tutorials / Tasks / Preparation tasks
@@ -15,5 +15,9 @@
 - Computer Modeling and Simulations 2018/2019 - Tasks
 - Web technologies 2018/2019 - Tutorials
 - Administration of computer networks 2018/2019 - Tasks / Project documentation
+
+## Master's
+- Machine Learning 2019/2020 - Tutorials and Tasks
+- Advanced Algorithms and Data Structures 2019/2020 - Tutorials
 
 #### Note that the info part is in English, while all the projects are in my native language Bosnian. #ad-populum
