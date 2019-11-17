@@ -11,6 +11,7 @@
 - Database Basics 2017/2018 - Project
 - Basics of computer networks 2017/2018 - Tasks
 - Basics of operational research 2018/2019 - Labs / Tasks
+- Basics of information systems 2018/2019 - Project
 - Software Verification and Validation 2018/2019 - Tasks / TDD / Unit-Testing / Metrics / QA and a lot more ..
 - Computer Modeling and Simulations 2018/2019 - Tasks
 - Web technologies 2018/2019 - Tutorials
