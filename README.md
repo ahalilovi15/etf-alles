@@ -25,7 +25,7 @@
 
 ## Helping out - You want to upgrade this repository ?
 - If you want to help out, feel free to fork this repository and to add your own tasks/projects/anything useful
-- Also put in your pull request the evaluated results on those projects/tasks (in order to pass the pull request in some way)
+- Also put in your pull request the evaluated results on those projects/tasks and the repository owner as the reviewer (in order to pass the pull request in some way)
 - After that, you will be added to the contributors list
 
 ## Contributors
