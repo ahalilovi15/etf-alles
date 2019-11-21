@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="17878b25-0db6-47d7-89f2-e3e2e5699b6a" name="Default Changelist" comment="Dodavanje jUnit testova">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpr-t1-z4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpr-t1-z4.iml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-666921777">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="7" />
+          <entry key="java" value="7119" />
+          <entry key="txt" value="88" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="7119" />
+          <entry key="PLAIN_TEXT" value="95" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+    </session>
+    <session id="-1761450504">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.59" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="2356" />
+          <entry key="txt" value="114" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="2356" />
+          <entry key="PLAIN_TEXT" value="114" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="4" />
+          <entry key="JAVA" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="4" />
+          <entry key="java" value="6" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Program.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="156" column="13" lean-forward="true" selection-start-line="156" selection-start-column="13" selection-end-line="156" selection-end-column="13" />
+              <folding>
+                <element signature="method#ProvjeriPodatkePredmeta#0;class#Program#0" />
+                <element signature="method#ProvjeriPodatkeStudenta#0;class#Program#0" />
+                <element signature="method#ImaPredmet#0;class#Program#0" />
+                <element signature="method#KreirajPredmet#0;class#Program#0" />
+                <element signature="method#DodajStudenta#0;class#Program#0" />
+                <element signature="method#UpisiStudentaNaPredmet#0;class#Program#0" />
+                <element signature="method#IspisiStudentaSaPredmeta#0;class#Program#0" />
+                <element signature="method#ObrisiPredmet#0;class#Program#0" />
+                <element signature="method#IspisiSpisakStudenata#0;class#Program#0" />
+                <element signature="method#DodavanjeStudenta#0;class#Program#0" />
+                <element signature="method#KreiranjePredmeta#0;class#Program#0" />
+                <element signature="method#UpisStudentaNaPredmet#0;class#Program#0" />
+                <element signature="method#IspisStudentaSaPredmeta#0;class#Program#0" />
+                <element signature="method#BrisanjeStudenta#0;class#Program#0" />
+                <element signature="method#BrisanjePredmeta#0;class#Program#0" />
+                <element signature="method#Ispis#0;class#Program#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/ProgramTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+              <folding>
+                <element signature="method#provjeriPodatkePredmeta#0;class#ProgramTest#0" />
+                <element signature="method#provjeriPodatkeStudenta#0;class#ProgramTest#0" />
+                <element signature="method#imaPredmet#0;class#ProgramTest#0" />
+                <element signature="method#imaStudent#0;class#ProgramTest#0" />
+                <element signature="method#kreirajPredmet#0;class#ProgramTest#0" />
+                <element signature="method#dodajStudenta#0;class#ProgramTest#0" />
+                <element signature="method#upisiStudentaNaPredmet#0;class#ProgramTest#0" />
+                <element signature="method#ispisiStudentaSaPredmeta#0;class#ProgramTest#0" />
+                <element signature="method#obrisiStudenta#0;class#ProgramTest#0" />
+                <element signature="method#obrisiPredmet#0;class#ProgramTest#0" />
+                <element signature="method#ispisiSpisakStudenata#0;class#ProgramTest#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Predmet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+              <folding>
+                <element signature="e#248#249#0" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="method#Upisi#0;class#Predmet#0" />
+                <element signature="method#toString#0;class#Predmet#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Student.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#470#471#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Main.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Student.java" />
+        <option value="$PROJECT_DIR$/test/ProgramTest.java" />
+        <option value="$PROJECT_DIR$/test/ba/unsa/etf/rpr/PredmetTest.java" />
+        <option value="$PROJECT_DIR$/test/ba/unsa/etf/rpr/StudentTest.java" />
+        <option value="$PROJECT_DIR$/test/ba/unsa/etf/rpr/ProgramTest.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Program.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Predmet.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="rpr-t1-z4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpr-t1-z4" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/kuroi/Desktop/RPR/17825-RPR-2018-2019/Tut1/rpr-t1-z4/src/ba/unsa/etf/rpr/Student.java" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540245634420" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../rpr-t2-z2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ba.unsa.etf.rpr" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.ba.unsa.etf.rpr in rpr-t1-z4">
+    <configuration name="ProgramTest.ispisiSpisakStudenata" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-t1-z4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.ProgramTest" />
+      <option name="METHOD_NAME" value="ispisiSpisakStudenata" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProgramTest.ispisiStudentaSaPredmeta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-t1-z4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.ProgramTest" />
+      <option name="METHOD_NAME" value="ispisiStudentaSaPredmeta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProgramTest.obrisiPredmet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-t1-z4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.ProgramTest" />
+      <option name="METHOD_NAME" value="obrisiPredmet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProgramTest.obrisiStudenta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-t1-z4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.ProgramTest" />
+      <option name="METHOD_NAME" value="obrisiStudenta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ba.unsa.etf.rpr in rpr-t1-z4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-t1-z4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ProgramTest.ispisiStudentaSaPredmeta" />
+      <item itemvalue="JUnit.ProgramTest.obrisiPredmet" />
+      <item itemvalue="JUnit.ProgramTest.ispisiSpisakStudenata" />
+      <item itemvalue="JUnit.ba.unsa.etf.rpr in rpr-t1-z4" />
+      <item itemvalue="JUnit.ProgramTest.obrisiStudenta" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ba.unsa.etf.rpr in rpr-t1-z4" />
+        <item itemvalue="JUnit.ProgramTest.obrisiStudenta" />
+        <item itemvalue="JUnit.ProgramTest.ispisiSpisakStudenata" />
+        <item itemvalue="JUnit.ProgramTest.obrisiPredmet" />
+        <item itemvalue="JUnit.ProgramTest.ispisiStudentaSaPredmeta" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17878b25-0db6-47d7-89f2-e3e2e5699b6a" name="Default Changelist" comment="" />
+      <created>1539610838805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539610838805</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Dodao cetvrti zadatak... unesena su 3 studenta i 2 predmeta u kodu">
+      <created>1539629858634</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539629858634</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Popraviogresku u cetvrtom zadatku">
+      <created>1540048615874</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540048615874</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dodavanje jUnit testova">
+      <created>1540218223802</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1540218223802</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Dodao junit testove za sve klase">
+      <created>1540245400508</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1540245400508</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="ProgramTest_ispisiStudentaSaPredmeta - 2018.10.22 at 22h 58m 24s.xml">
+      <configuration name="ProgramTest.ispisiStudentaSaPredmeta" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProgramTest_obrisiPredmet - 2018.10.22 at 23h 40m 34s.xml">
+      <configuration name="ProgramTest.obrisiPredmet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProgramTest_ispisiSpisakStudenata - 2018.10.22 at 23h 43m 36s.xml">
+      <configuration name="ProgramTest.ispisiSpisakStudenata" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProgramTest_ispisiSpisakStudenata - 2018.10.22 at 23h 43m 52s.xml">
+      <configuration name="ProgramTest.ispisiSpisakStudenata" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ba_unsa_etf_rpr_in_rpr-t1-z4 - 2018.10.22 at 23h 48m 10s.xml">
+      <configuration name="ba.unsa.etf.rpr in rpr-t1-z4" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProgramTest_obrisiStudenta - 2018.10.22 at 23h 49m 08s.xml">
+      <configuration name="ProgramTest.obrisiStudenta" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProgramTest_obrisiStudenta - 2018.10.22 at 23h 49m 46s.xml">
+      <configuration name="ProgramTest.obrisiStudenta" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProgramTest_obrisiStudenta - 2018.10.22 at 23h 54m 45s.xml">
+      <configuration name="ProgramTest.obrisiStudenta" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProgramTest_obrisiStudenta - 2018.10.22 at 23h 55m 00s.xml">
+      <configuration name="ProgramTest.obrisiStudenta" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ba_unsa_etf_rpr_in_rpr-t1-z4 - 2018.10.22 at 23h 55m 13s.xml">
+      <configuration name="ba.unsa.etf.rpr in rpr-t1-z4" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.08852459" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.41311476" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.48360655" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3295082" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3295082" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dodao cetvrti zadatak... unesena su 3 studenta i 2 predmeta u kodu" />
+    <MESSAGE value="Popraviogresku u cetvrtom zadatku" />
+    <MESSAGE value="Dodavanje jUnit testova" />
+    <MESSAGE value="Dodao junit testove za sve klase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodao junit testove za sve klase" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="279" selection-start-line="279" selection-end-line="279" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/io/BufferedInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="351" selection-start-line="351" selection-end-line="351" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/sun/nio/cs/StreamDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="177" selection-start-line="177" selection-end-line="177" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/PredmetTest.java" />
+    <entry file="file://$PROJECT_DIR$/test/ProgramTest.java" />
+    <entry file="file://$PROJECT_DIR$/test/StudentTest.java" />
+    <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/PredmetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/StudentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar!/org/junit/jupiter/api/AssertEquals.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
+          <folding>
+            <element signature="e#5412#5413#0" expanded="true" />
+            <element signature="e#5472#5473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar!/org/junit/jupiter/api/AssertionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar!/org/junit/jupiter/api/Assertions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+          <folding>
+            <element signature="e#8153#8154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#470#471#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="156" column="13" lean-forward="true" selection-start-line="156" selection-start-column="13" selection-end-line="156" selection-end-column="13" />
+          <folding>
+            <element signature="method#ProvjeriPodatkePredmeta#0;class#Program#0" />
+            <element signature="method#ProvjeriPodatkeStudenta#0;class#Program#0" />
+            <element signature="method#ImaPredmet#0;class#Program#0" />
+            <element signature="method#KreirajPredmet#0;class#Program#0" />
+            <element signature="method#DodajStudenta#0;class#Program#0" />
+            <element signature="method#UpisiStudentaNaPredmet#0;class#Program#0" />
+            <element signature="method#IspisiStudentaSaPredmeta#0;class#Program#0" />
+            <element signature="method#ObrisiPredmet#0;class#Program#0" />
+            <element signature="method#IspisiSpisakStudenata#0;class#Program#0" />
+            <element signature="method#DodavanjeStudenta#0;class#Program#0" />
+            <element signature="method#KreiranjePredmeta#0;class#Program#0" />
+            <element signature="method#UpisStudentaNaPredmet#0;class#Program#0" />
+            <element signature="method#IspisStudentaSaPredmeta#0;class#Program#0" />
+            <element signature="method#BrisanjeStudenta#0;class#Program#0" />
+            <element signature="method#BrisanjePredmeta#0;class#Program#0" />
+            <element signature="method#Ispis#0;class#Program#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Predmet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+          <folding>
+            <element signature="e#248#249#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="method#Upisi#0;class#Predmet#0" />
+            <element signature="method#toString#0;class#Predmet#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/ProgramTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+          <folding>
+            <element signature="method#provjeriPodatkePredmeta#0;class#ProgramTest#0" />
+            <element signature="method#provjeriPodatkeStudenta#0;class#ProgramTest#0" />
+            <element signature="method#imaPredmet#0;class#ProgramTest#0" />
+            <element signature="method#imaStudent#0;class#ProgramTest#0" />
+            <element signature="method#kreirajPredmet#0;class#ProgramTest#0" />
+            <element signature="method#dodajStudenta#0;class#ProgramTest#0" />
+            <element signature="method#upisiStudentaNaPredmet#0;class#ProgramTest#0" />
+            <element signature="method#ispisiStudentaSaPredmeta#0;class#ProgramTest#0" />
+            <element signature="method#obrisiStudenta#0;class#ProgramTest#0" />
+            <element signature="method#obrisiPredmet#0;class#ProgramTest#0" />
+            <element signature="method#ispisiSpisakStudenata#0;class#ProgramTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
