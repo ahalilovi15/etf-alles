@@ -7,13 +7,13 @@
 - Programming Techniques 2016/2017 - Tutorials
 - Algorithms and Data Structures 2017/2018 - Tutorials / Tasks / Preparation tasks
 - Development of software solutions 2017/2018 - Project
-- Development of software solutions 2018/2019 - Tasks / Tutorials
+- Development of software solutions 2018/2019 - Tasks / Tutorials - see [Contributors](https://github.com/MasovicHaris/etf-alles/blob/master/README.md#contributors)
 - Database Basics 2017/2018 - Project
 - Discrete Mathematics 2017/2018 - Tasks (Latex)
 - Basics of computer networks 2017/2018 - Tasks
 - Basics of operational research 2018/2019 - Labs / Tasks
 - Basics of information systems 2018/2019 - Project
-- Engineering economics 2018/2019 - Tutorials
+- Engineering economics 2018/2019 - Tutorials - see [Contributors](https://github.com/MasovicHaris/etf-alles/blob/master/README.md#contributors)
 - Software Verification and Validation 2018/2019 - Tasks / TDD / Unit-Testing / Metrics / QA and a lot more ..
 - Computer Modeling and Simulations 2018/2019 - Tasks
 - Web technologies 2018/2019 - Tutorials
