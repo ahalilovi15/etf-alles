@@ -22,8 +22,8 @@
 - Advanced Algorithms and Data Structures 2019/2020 - Tutorials
 
 #### Helping out - You want to upgrade this repository ?
-- If you want to help out, feel free to fork this project and to add your own tasks/projects/anything useful
-- Also put in your pull request the evaluated results on those projects/tasks (in order to pass the pr in some way)
-- After that I will add you to the contributors list
+- If you want to help out, feel free to fork this repository and to add your own tasks/projects/anything useful
+- Also put in your pull request the evaluated results on those projects/tasks (in order to pass the pull request in some way)
+- After that, you will be added to the contributors list
 
 #### Note that the info part is in English, while all the projects are in my native language Bosnian. #ad-populum
