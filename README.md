@@ -31,8 +31,8 @@
 
 ## Contributors
 #### If you see these people, buy them a beer, chocolate or just hug them:
-- Faris Poljčić - added the `cad-cam-engineering` section
-- Mirza Šehalić - added the `engineering-economics` section, upgraded `discrete-mathematics`, `database-basics` sections
+- Faris Poljčić - added the `/cad-cam-engineering` section
+- Mirza Šehalić - added the `/engineering-economics` section, upgraded `/discrete-mathematics`, `/database-basics` sections
 - Nermin Krdžić - added a lot of stuff to the `/development-of-software-solutions` section
 - Haris Mašović - owner of the repository, added most of the stuff
 
