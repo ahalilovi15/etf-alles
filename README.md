@@ -7,13 +7,13 @@
 - Programming Techniques 2016/2017 - Tutorials
 - Algorithms and Data Structures 2017/2018 - Tutorials / Tasks / Preparation tasks
 - Development of software solutions 2017/2018 - Project
-- Development of software solutions 2018/2019 - Tasks / Tutorials - see [Contributors](https://github.com/MasovicHaris/etf-alles/blob/master/README.md#contributors)
+- Development of software solutions 2018/2019 - Tasks / Tutorials
 - Database Basics 2017/2018 - Project
 - Discrete Mathematics 2017/2018 - Tasks (Latex)
 - Basics of computer networks 2017/2018 - Tasks
 - Basics of operational research 2018/2019 - Labs / Tasks
 - Basics of information systems 2018/2019 - Project
-- Engineering economics 2018/2019 - Tutorials - see [Contributors](https://github.com/MasovicHaris/etf-alles/blob/master/README.md#contributors)
+- Engineering economics 2018/2019 - Tutorials
 - Software Verification and Validation 2018/2019 - Tasks / TDD / Unit-Testing / Metrics / QA and a lot more ..
 - Computer Modeling and Simulations 2018/2019 - Tasks
 - Web technologies 2018/2019 - Tutorials
@@ -30,7 +30,7 @@
 
 ## Contributors
 #### If you see these people, buy them a beer, chocolate or just hug them:
-- Mirza Šehalić - added the `engineering-economics` section
+- Mirza Šehalić - added the `engineering-economics` section, upgraded `discrete-mathematics`, `database-basics` sections
 - Nermin Krdžić - added a lot of stuff to the `/development-of-software-solutions` section
 - Haris Mašović - owner of the repository, added most of the stuff
 
