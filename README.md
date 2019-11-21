@@ -13,6 +13,7 @@
 - Basics of computer networks 2017/2018 - Tasks
 - Basics of operational research 2018/2019 - Labs / Tasks
 - Basics of information systems 2018/2019 - Project
+- Engineering economics 2018/2019 - Tutorials
 - Software Verification and Validation 2018/2019 - Tasks / TDD / Unit-Testing / Metrics / QA and a lot more ..
 - Computer Modeling and Simulations 2018/2019 - Tasks
 - Web technologies 2018/2019 - Tutorials
@@ -29,6 +30,7 @@
 
 ## Contributors
 #### If you see these people, buy them a beer, chocolate or just hug them:
+- Mirza Šehalić - added the `engineering-economics` section
 - Nermin Krdžić - added a lot of stuff to the `/development-of-software-solutions` section
 - Haris Mašović - owner of the repository, added most of the stuff
 
