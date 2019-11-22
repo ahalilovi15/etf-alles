@@ -3,11 +3,10 @@
 
 ## Bachelor's
 - Mathematical logic and calculus theory 2016/2017 - Tasks (Latex)
-- Introduction to programming 2016/2017 - Tutorials
+- Introduction to programming 2016/2017, 2018/2019 - Tutorials / Tasks
 - Programming techniques 2016/2017 - Tutorials
 - Algorithms and data structures 2017/2018 - Tutorials / Tasks / Preparation tasks
-- Development of software solutions 2017/2018 - Project
-- Development of software solutions 2018/2019 - Tasks / Tutorials
+- Development of software solutions 2017/2018, 2018/2019  - Tasks / Tutorials / Project
 - Database basics 2017/2018 - Project
 - Discrete mathematics 2017/2018 - Tasks (Latex)
 - Basics of computer networks 2017/2018 - Tasks
@@ -31,6 +30,7 @@
 
 ## Contributors
 #### If you see these people, buy them a beer, chocolate or just hug them:
+- Huso Hamzić - upgraded `/introduction-to-programming` section
 - Faris Poljčić - added the `/cad-cam-engineering` section
 - Mirza Šehalić - added the `/engineering-economics` section, upgraded `/discrete-mathematics`, `/database-basics` sections
 - Nermin Krdžić - added a lot of stuff to the `/development-of-software-solutions` section
