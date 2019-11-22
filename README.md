@@ -3,7 +3,7 @@
 
 ## Bachelor's
 - Mathematical logic and calculus theory 2016/2017 - Tasks (Latex)
-- Introduction to programming 2016/2017 - Tutorials
+- Introduction to programming 2016/2017, 2018/2019 - Tutorials / Tasks
 - Programming techniques 2016/2017 - Tutorials
 - Algorithms and data structures 2017/2018 - Tutorials / Tasks / Preparation tasks
 - Development of software solutions 2017/2018 - Project
@@ -21,7 +21,7 @@
 - Administration of computer networks 2018/2019 - Tasks / Project documentation
 
 ## Master's
-- Machine Learning 2019/2020 - Tutorials and Tasks
+- Machine Learning 2019/2020 - Tutorials / Tasks
 - Advanced Algorithms and Data Structures 2019/2020 - Tutorials
 
 ## Helping out - You want to upgrade this repository ?
