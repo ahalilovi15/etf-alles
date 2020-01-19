@@ -11,6 +11,7 @@
 - Discrete mathematics 2017/2018 - Tasks (Latex)
 - Basics of computer networks 2017/2018 - Tasks
 - Automata and formal languages 2017/2018 - Task
+- Object oriented analysis and design 2017/2018 - Project
 - Cad cam engineering 2018/2019 - Tutorials
 - Basics of operational research 2018/2019 - Labs / Tasks
 - Basics of information systems 2018/2019 - Project
