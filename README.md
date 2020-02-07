@@ -9,6 +9,7 @@
 - Development of software solutions 2017/2018, 2018/2019  - Tasks / Tutorials / Project
 - Database basics 2017/2018 - Project
 - Discrete mathematics 2017/2018 - Tasks (Latex)
+- Numerical algorithms 2019/2020 - Tasks / Tutorials 
 - Basics of computer networks 2017/2018 - Tasks
 - Automata and formal languages 2017/2018 - Task
 - Object oriented analysis and design 2017/2018 - Project
@@ -34,10 +35,18 @@
 
 ## Contributors
 #### If you see these people, buy them a beer, chocolate or just hug them:
-- Huso Hamzić - upgraded `/introduction-to-programming`, `/programming-tehniques` sections
-- Faris Poljčić - added the `/cad-cam-engineering` section
-- Mirza Šehalić - added the `/engineering-economics` section, upgraded `/discrete-mathematics`, `/database-basics` sections
-- Nermin Krdžić - added a lot of stuff to the `/development-of-software-solutions` section
-- Haris Mašović - owner of the repository, added most of the stuff
+- Mirza Učanbarlić
+  - added the `/numerical-algorithms` section
+- Huso Hamzić 
+  - upgraded `/introduction-to-programming`, `/programming-tehniques` sections
+- Faris Poljčić 
+  - added the `/cad-cam-engineering` section
+- Mirza Šehalić 
+  - added the `/engineering-economics` section, 
+  - upgraded `/discrete-mathematics`, `/database-basics` sections
+- Nermin Krdžić 
+  - upgraded the `/development-of-software-solutions` section
+- Haris Mašović 
+  - owner of the repository, added most of the stuff
 
 #### Note that the info part is in English, while all the projects are in Bosnian. #ad-populum
