@@ -6,7 +6,7 @@
 - Introduction to programming 2016/2017, 2018/2019 - Tutorials / Tasks
 - Programming techniques 2016/2017 - Tutorials
 - Algorithms and data structures 2017/2018 - Tutorials / Tasks / Preparation tasks
-- Development of software solutions 2017/2018, 2018/2019  - Tasks / Tutorials / Project
+- Development of software solutions 2017/2018, 2018/2019, 2019/2020 - Tasks / Tutorials / Project
 - Database basics 2017/2018 - Project
 - Discrete mathematics 2017/2018 - Tasks (Latex)
 - Numerical algorithms 2019/2020 - Tasks / Tutorials 
@@ -38,7 +38,7 @@
 - Mirza Učanbarlić
   - added the `/numerical-algorithms` section
 - Huso Hamzić 
-  - upgraded `/introduction-to-programming`, `/programming-tehniques` sections
+  - upgraded `/introduction-to-programming`, `/programming-tehniques`, `/development-of-software-solutions` sections
 - Faris Poljčić 
   - added the `/cad-cam-engineering` section
 - Mirza Šehalić 
