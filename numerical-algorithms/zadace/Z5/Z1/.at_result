@@ -1,6 +1,6 @@
 {
     "buildhost_description": {
-        "id": "lab002c01",
+        "id": "lab002c28",
         "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
         "compiler_version": "g++ (GCC) 6.2.0",
         "debugger_version": "GNU gdb (GDB) 7.12",
@@ -9,45 +9,7 @@
     "status": 4,
     "compile_result": {
         "status": 1,
-        "output": "main.cpp: In function ‘double NewtonRaphsonSolve(FunTip1, FunTip2, double, double, double, int)’:\nmain.cpp:203:19: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n     if(damping == 0) {\n                   ^\nmain.cpp:223:74: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         while((std::fabs(v) > std::fabs(w)) || !std::isfinite(v) || d == 0) {\n                                                                          ^\nmain.cpp: In instantiation of ‘double NewtonRaphsonSolve(FunTip1, FunTip2, double, double, double, int) [with FunTip1 = main()::<lambda(double)>; FunTip2 = main()::<lambda(double)>]’:\nmain.cpp:444:49:   required from here\nmain.cpp:203:16: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n     if(damping == 0) {\n        ~~~~~~~~^~~~\nmain.cpp:223:71: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         while((std::fabs(v) > std::fabs(w)) || !std::isfinite(v) || d == 0) {\n                                                                     ~~^~~~",
-        "parsed_output": [
-            {
-                "type": "warning",
-                "file": "main.cpp",
-                "line": "203",
-                "col": "19",
-                "message": "comparing floating point with == or != is unsafe",
-                "output": "/tmp/buildservice/bs_1593/main.cpp:203:19: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]     if(damping == 0) {                   ^",
-                "code": "if(damping == 0) {"
-            },
-            {
-                "type": "warning",
-                "file": "main.cpp",
-                "line": "223",
-                "col": "74",
-                "message": "comparing floating point with == or != is unsafe",
-                "output": "/tmp/buildservice/bs_1593/main.cpp:223:74: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]         while((std::fabs(v) > std::fabs(w)) || !std::isfinite(v) || d == 0) {                                                                          ^/tmp/buildservice/bs_1593/main.cpp: In instantiation of ‘double NewtonRaphsonSolve(FunTip1, FunTip2, double, double, double, int) [with FunTip1 = main()::<lambda(double)>; FunTip2 = main()::<lambda(double)>]’:/tmp/buildservice/bs_1593/main.cpp:444:49:   required from here",
-                "code": "while((std::fabs(v) > std::fabs(w)) || !std::isfinite(v) || d == 0) {"
-            },
-            {
-                "type": "warning",
-                "file": "main.cpp",
-                "line": "203",
-                "col": "16",
-                "message": "comparing floating point with == or != is unsafe",
-                "output": "/tmp/buildservice/bs_1593/main.cpp:203:16: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]     if(damping == 0) {        ~~~~~~~~^~~~",
-                "code": "if(damping == 0) {"
-            },
-            {
-                "type": "warning",
-                "file": "main.cpp",
-                "line": "223",
-                "col": "71",
-                "message": "comparing floating point with == or != is unsafe",
-                "output": "/tmp/buildservice/bs_1593/main.cpp:223:71: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]         while((std::fabs(v) > std::fabs(w)) || !std::isfinite(v) || d == 0) {                                                                     ~~^~~~",
-                "code": "while((std::fabs(v) > std::fabs(w)) || !std::isfinite(v) || d == 0) {"
-            }
-        ]
+        "output": ""
     },
     "run_result": [],
     "debug_result": [],
@@ -390,9 +352,9 @@
             }
         },
         "147": {
-            "status": 1,
+            "status": 9,
             "run_result": {
-                "output": "1",
+                "output": "",
                 "duration": 0,
                 "status": 1
             },
@@ -405,5 +367,5 @@
         }
     },
     "queue_items": 0,
-    "time": 1579619230
+    "time": 1578493088
 }

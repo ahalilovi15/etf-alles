@@ -1,15 +1,62 @@
 {
     "buildhost_description": {
-        "id": "lab002c26",
-        "os": "Linux 2.6.32-696.10.1.el6.x86_64 x86_64\n\"CentOS release 6.9 (Final)\"\n",
+        "id": "lab002c03",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
         "compiler_version": "g++ (GCC) 6.2.0",
-        "debugger_version": "",
+        "debugger_version": "GNU gdb (GDB) 7.12",
         "profiler_version": "valgrind-3.12.0"
     },
     "status": 4,
     "compile_result": {
         "status": 1,
-        "output": ""
+        "output": "main.cpp: In instantiation of ‘AVLStabloMapa<TipKljuca, TipVrijednosti>::node::node(const TipKljuca&, const TipVrijednosti&, int) [with TipKljuca = int; TipVrijednosti = int]’:\nmain.cpp:138:8:   required from ‘AVLStabloMapa<TipKljuca, TipVrijednosti>& AVLStabloMapa<TipKljuca, TipVrijednosti>::insert(const TipKljuca&) [with TipKljuca = int; TipVrijednosti = int]’\nmain.cpp:281:29:   required from ‘TipVrijednosti& AVLStabloMapa<TipKljuca, TipVrijednosti>::operator[](TipKljuca) [with TipKljuca = int; TipVrijednosti = int]’\nmain.cpp:561:25:   required from here\nmain.cpp:38:11: warning: ‘AVLStabloMapa<int, int>::node::right’ will be initialized after [-Wreorder]\n     node* right;\n           ^~~~~\nmain.cpp:35:43: warning:   ‘int AVLStabloMapa<int, int>::node::value’ [-Wreorder]\n     TipVrijednosti value = TipVrijednosti();\n                                           ^\nmain.cpp:39:5: warning:   when initialized here [-Wreorder]\n     node(const TipKljuca& d, const TipVrijednosti& t, int b=0):\n     ^~~~\nmain.cpp: In member function ‘BinStabloMapa<TipKljuca, TipVrijednosti>::Cvor* BinStabloMapa<TipKljuca, TipVrijednosti>::nadjiCvor(const TipKljuca&, BinStabloMapa<TipKljuca, TipVrijednosti>::Cvor*) const [with TipKljuca = int; TipVrijednosti = int]’:\nmain.cpp:413:3: warning: control reaches end of non-void function [-Wreturn-type]\n   }\n   ^\nmain.cpp: In member function ‘BinStabloMapa<TipKljuca, TipVrijednosti>::Cvor* BinStabloMapa<TipKljuca, TipVrijednosti>::NadjiMax(BinStabloMapa<TipKljuca, TipVrijednosti>::Cvor*) [with TipKljuca = int; TipVrijednosti = int]’:\nmain.cpp:419:3: warning: control reaches end of non-void function [-Wreturn-type]\n   }\n   ^",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "38",
+                "col": "11",
+                "message": "'AVLStabloMapa<int, int>::node::right' will be initialized after",
+                "output": "/tmp/buildservice/bs_8829/main.cpp:38:11: warning: ‘AVLStabloMapa<int, int>::node::right’ will be initialized after [-Wreorder]     node* right;           ^~~~~",
+                "code": "node* right;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "35",
+                "col": "43",
+                "message": "'int AVLStabloMapa<int, int>::node::value'",
+                "output": "/tmp/buildservice/bs_8829/main.cpp:35:43: warning:   ‘int AVLStabloMapa<int, int>::node::value’ [-Wreorder]     TipVrijednosti value = TipVrijednosti();                                           ^",
+                "code": "TipVrijednosti value = TipVrijednosti();"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "39",
+                "col": "5",
+                "message": "when initialized here",
+                "output": "/tmp/buildservice/bs_8829/main.cpp:39:5: warning:   when initialized here [-Wreorder]     node(const TipKljuca& d, const TipVrijednosti& t, int b=0):     ^~~~/tmp/buildservice/bs_8829/main.cpp: In member function ‘BinStabloMapa<TipKljuca, TipVrijednosti>::Cvor* BinStabloMapa<TipKljuca, TipVrijednosti>::nadjiCvor(const TipKljuca&, BinStabloMapa<TipKljuca, TipVrijednosti>::Cvor*) const [with TipKljuca = int; TipVrijednosti = int]’:",
+                "code": "node(const TipKljuca& d, const TipVrijednosti& t, int b=0):"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "413",
+                "col": "3",
+                "message": "control reaches end of non-void function",
+                "output": "/tmp/buildservice/bs_8829/main.cpp:413:3: warning: control reaches end of non-void function [-Wreturn-type]   }   ^/tmp/buildservice/bs_8829/main.cpp: In member function ‘BinStabloMapa<TipKljuca, TipVrijednosti>::Cvor* BinStabloMapa<TipKljuca, TipVrijednosti>::NadjiMax(BinStabloMapa<TipKljuca, TipVrijednosti>::Cvor*) [with TipKljuca = int; TipVrijednosti = int]’:",
+                "code": "}"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "419",
+                "col": "3",
+                "message": "control reaches end of non-void function",
+                "output": "/tmp/buildservice/bs_8829/main.cpp:419:3: warning: control reaches end of non-void function [-Wreturn-type]   }   ^",
+                "code": "}"
+            }
+        ]
     },
     "run_result": [],
     "debug_result": [],
@@ -103,7 +150,7 @@
             "status": 1,
             "run_result": {
                 "output": "OK",
-                "duration": 5,
+                "duration": 7,
                 "status": 1
             },
             "debug_result": [],
@@ -114,11 +161,11 @@
             }
         },
         "1778": {
-            "status": 4,
+            "status": 1,
             "run_result": {
-                "output": "Dodano 1000\nDodano 2000\nDodano 4000\nDodano 8000\nDodano 16000\nDodano 32000\n",
-                "duration": 10,
-                "status": 2
+                "output": "Dodano 1000\nDodano 2000\nDodano 4000\nDodano 8000\nDodano 16000\nDodano 32000\nDodano 64000\nDodano 128000\nDodano 256000\nOK",
+                "duration": 2,
+                "status": 1
             },
             "debug_result": [],
             "profile_result": [],
@@ -129,5 +176,5 @@
         }
     },
     "queue_items": 0,
-    "time": 1514812598
+    "time": 1578014430
 }

@@ -1,498 +1,613 @@
 #include <iostream>
-#include <algorithm>
+#include <utility>
+#include <vector>
+#include <string>
+#include <iomanip>
+
 
 using namespace std;
 
-template <typename TipKljuca, typename TipVrijednosti>
-struct Cvor {
-    TipKljuca kljuc;
-    TipVrijednosti vrijednost;
-    Cvor *lijevi = nullptr;
-    Cvor *desni = nullptr;
-    Cvor *rod = nullptr;
-    int balans = 0;
-};
 
 template <typename TipKljuca, typename TipVrijednosti>
 class Mapa
 {
-public:
-    Mapa() {}
-    virtual ~Mapa() {}
-    virtual TipVrijednosti &operator[] (TipKljuca k) =0;
-    virtual TipVrijednosti  operator[] (TipKljuca k) const =0;
-    virtual void obrisi() =0;
-    virtual void obrisi(const TipKljuca &k) =0;
-    virtual int brojElemenata() const=0;
+    public:
+    Mapa(){};
+    virtual ~Mapa(){};
+    virtual int brojElemenata() const = 0;
+    virtual void obrisi() = 0;
+    virtual void obrisi(TipKljuca kljuc) = 0;
+    virtual TipVrijednosti operator[](const TipKljuca k) const = 0;
+    virtual TipVrijednosti &operator[](TipKljuca k) = 0;
 };
 
-template <typename TipKljuca, typename TipVrijednosti>
-class AVLStabloMapa : public Mapa<TipKljuca, TipVrijednosti>
+
+
+// znaci stablo je organizovano po kljucu
+
+template<typename TipKljuca, typename TipVrijednosti>
+class AVLStabloMapa: public Mapa<TipKljuca,TipVrijednosti>
 {
-    Cvor<TipKljuca, TipVrijednosti> *korijen;
-    int brojEl;
-    Cvor<TipKljuca, TipVrijednosti>* &pretragaBST(const TipKljuca &k, Cvor<TipKljuca, TipVrijednosti>* &noviKorjen, Cvor<TipKljuca, TipVrijednosti>* &p) {
-        p = noviKorjen;
-        while(p != nullptr && k != p->kljuc) {
-            if(k < p->kljuc) {
-                p = p->lijevi;
-            } else  p = p->desni;
+  private:
+  struct node
+  {
+    TipKljuca kljuc;
+    TipVrijednosti value = TipVrijednosti();
+    int balance : 2;
+    node* left;
+    node* right;
+    node(const TipKljuca& d, const TipVrijednosti& t, int b=0):
+      kljuc(d), balance(b), left(0), right(0), value(t){}
+  };
+  
+  node* root;
+  node*** pstack;
+  bool* dstack;
+  
+  unsigned int size_var;
+  inline void AVL_LL_rotate(node** p)
+  {
+    node* t=*p;
+    *p=t->left;
+    t->left=(*p)->right;
+    (*p)->right=t;
+    t->balance=-(++(*p)->balance);
+  }
+  inline void AVL_RR_rotate(node** p)
+  {
+    node* t=*p;
+    *p=t->right;
+    t->right=(*p)->left;
+    (*p)->left=t;
+    t->balance=-(--(*p)->balance);
+  }
+  inline void AVL_LR_rotate(node** p)
+  {
+    node* t=*p, *l=t->left;
+    *p=l->right;
+    l->right=(*p)->left;
+    t->left = (*p)->right;
+    (*p)->right = t;
+    (*p)->left = l;
+    if((*p)->balance != 1){
+      l->balance=0;
+      t->balance=-(*p)->balance;
+    }
+    else
+    {
+      l->balance=-1;
+      t->balance=0;
+    }
+    (*p)->balance=0;
+  }
+  inline void AVL_RL_rotate(node** p)
+  {
+    node* t=*p, *l=t->right;
+    *p=l->left;
+    l->left=(*p)->right;
+    t->right = (*p)->left;
+    (*p)->left = t;
+    (*p)->right = l;
+    if((*p)->balance != -1){
+      l->balance=0;
+      t->balance=-(*p)->balance;
+    }
+    else
+    {
+      l->balance=1;
+      t->balance=0;
+    }
+    (*p)->balance=0;
+    
+  }
+  node* find(const TipKljuca &d) const
+  {
+      node* p = root;
+      while(p)
+      {
+        if(d<p->kljuc) p=p->left;
+        else if(!(d==p->kljuc)) p=p->right;
+        else return p;
+      }
+      return nullptr;
+  }
+  
+  void AVL_copy(node*& p, node* rp)
+  {
+      p=new node(rp->kljuc, rp->value, rp->balance);
+      if(rp->left) AVL_copy(p->left, rp->left);
+      if(rp->right) AVL_copy(p->right, rp->right);
+  }
+  
+  
+  AVLStabloMapa<TipKljuca,TipVrijednosti>& insert(const TipKljuca& d)
+  {
+    node*** s = pstack, **p=&root;
+    bool* b = dstack;
+    while(*p){
+      *(++s) = p;
+      if((*(++b)=(d<(*p)->kljuc)))
+          p=&((*p)->left);
+      else if(!(d==(*p)->kljuc))
+        p=&((*p)->right);
+      else return *this;
+    }
+    
+    TipVrijednosti bezze = TipVrijednosti();
+    
+    *p=new node(d, bezze);
+    size_var++;
+    while(s!=pstack)
+    {
+      p=*s;
+      if(*b)
+      {
+        if((*p)->balance==-1){
+          if((*p)->left->balance!=1)
+              AVL_LL_rotate(p);
+          else
+              AVL_LR_rotate(p);
+          return *this;
         }
-        return p;
-    }
-    Cvor<TipKljuca, TipVrijednosti>* pretragaBST(const TipKljuca &k, Cvor<TipKljuca, TipVrijednosti>* noviKorjen) const {
-        while(noviKorjen != nullptr && k != noviKorjen->kljuc) {
-            if(k < noviKorjen->kljuc) {
-                noviKorjen = noviKorjen->lijevi;
-            } else  noviKorjen = noviKorjen->desni;
+        if(!--(*p)->balance) return *this;
+      }
+      else{
+        if((*p)->balance==1){
+          if((*p)->right->balance!=-1)
+              AVL_RR_rotate(p);
+          else
+              AVL_RL_rotate(p);
+          return *this;
         }
-        return noviKorjen;
+        if(!++(*p)->balance) return *this;
+      }
+      b--;
+      s--;
     }
-
-    bool brisiCvorBST(const TipKljuca &k, Cvor<TipKljuca, TipVrijednosti>* &noviKorjen) {
-        Cvor<TipKljuca, TipVrijednosti>* p = noviKorjen;
-        Cvor<TipKljuca, TipVrijednosti>* roditelj = nullptr;
-
-        while(p != nullptr && k != p->kljuc) {
-            roditelj = p;
-            if(k < p->kljuc) p = p->lijevi;
-            else p = p->desni;
-        }
-        if( p == nullptr) return false;
-
-        Cvor<TipKljuca, TipVrijednosti>* m = nullptr;
-        Cvor<TipKljuca, TipVrijednosti>* pm = nullptr;
-        Cvor<TipKljuca, TipVrijednosti>* tmp = nullptr;
-        if(p->lijevi == nullptr) {
-            m = p->desni;
-        } else if (p->desni == nullptr) {
-            m = p->lijevi;
-        } else {
-            pm = p;
-            m = p->lijevi;
-            tmp = m->desni;
-            while(tmp != nullptr) {
-                pm = m;
-                m = tmp;
-                tmp = m->desni;
-            }
-            if(pm != p ) {
-                pm->desni = m->lijevi;
-                m->lijevi = p->lijevi;
-            }
-            m->desni = p->desni;
-        }
-        if(roditelj == nullptr) noviKorjen = m;
-        else {
-            if(p == roditelj->lijevi) {
-                roditelj->lijevi = m;
-            } else {
-                roditelj->desni = m;
-            }
-        }
-        if(m != nullptr) m->rod = roditelj;
-        delete p;
-        p = nullptr;
-        return true;
+    return *this;
+  }
+  
+  public:
+  
+  AVLStabloMapa() : root(0), size_var(0)
+  {
+    pstack=new node**[sizeof(unsigned int) * 12];
+    try{
+      dstack=new bool[sizeof(unsigned int) * 12];
+    }catch(...)
+    {
+      delete[] pstack;
+      throw;
     }
-
-    void obrisiSve(Cvor<TipKljuca, TipVrijednosti>* &korje) {
-        Cvor<TipKljuca, TipVrijednosti>* noviKorjen = korje;
-        if(noviKorjen == nullptr) return;
-        obrisiSve(korje->lijevi);
-        obrisiSve(korje->desni);
-        delete noviKorjen;
+  }
+  
+  AVLStabloMapa(const AVLStabloMapa& param) : root(0), size_var(param.size_var)
+  {
+    pstack = new node**[sizeof(unsigned int)*12];
+    try{
+      dstack=new bool[sizeof(unsigned int) * 12];
+    }catch(...)
+    {
+      delete[] pstack;
+      throw;
     }
-
-    int height(Cvor<TipKljuca,TipVrijednosti>* &pok) {                                                                  //
-        if (pok == nullptr) return 0;
-        return pok->balans;
+    if(param.root)
+    {
+      try{
+        AVL_copy(root, param.root);
+      }catch(...)
+      {
+        delete[] pstack;
+        delete[] dstack;
+        obrisi();
+        throw;
+      }
     }
-
-    int getBalans(Cvor<TipKljuca,TipVrijednosti>* &pok) {
-        if (pok == nullptr) return 0;
-        return height(pok->lijevi) - height(pok->desni);
+  }
+  
+  AVLStabloMapa& operator=(const  AVLStabloMapa<TipKljuca, TipVrijednosti>& temp)
+  {
+    if(this==&temp) return *this;
+    delete[] dstack;
+    this->obrisi();
+    delete[] pstack;
+    
+    pstack= new node**[sizeof(unsigned int)*12];
+    try{
+      dstack=new bool[sizeof(unsigned int)*12];
+    }catch(...)
+    {
+      delete[] pstack;
+      throw;
     }
-
-    void kopirajBST(Cvor<TipKljuca, TipVrijednosti>* &prviKorjen, Cvor<TipKljuca, TipVrijednosti>* drugiKorjen) {
-        if (drugiKorjen == nullptr) return;
-
-        Cvor<TipKljuca, TipVrijednosti> *p = drugiKorjen;
-
-        prviKorjen = new Cvor<TipKljuca, TipVrijednosti>();
-        prviKorjen->kljuc = p->kljuc;
-        prviKorjen->vrijednost = p->vrijednost;
-        prviKorjen->balans = p->balans;
-        prviKorjen->lijevi = nullptr;
-        prviKorjen->desni = nullptr;
-
-        kopirajBST(prviKorjen->lijevi, p->lijevi);
-        kopirajBST(prviKorjen->desni, p->desni);
-        if (prviKorjen->lijevi != nullptr) prviKorjen->lijevi->rod = prviKorjen;
-        if (prviKorjen->desni != nullptr) prviKorjen->desni->rod = prviKorjen;
-        brojEl++;
+    
+    try{
+      AVL_copy(root, temp.root);
+      size_var=temp.size_var;
+      return *this;
+    }catch(...)
+    {
+      delete[] pstack;
+      delete[] dstack;
+      obrisi();
+      throw;
     }
-
-    Cvor<TipKljuca, TipVrijednosti>* rightRotate(Cvor<TipKljuca, TipVrijednosti>* &x) {
-        Cvor<TipKljuca, TipVrijednosti>* y = x->lijevi;
-        Cvor<TipKljuca, TipVrijednosti>* T2 = y->desni;
-
-        y->desni = x;
-        x->lijevi = T2;
-        y->rod = x->rod;
-        if(x != nullptr) x->rod = y;
-        if(T2!= nullptr) T2->rod = x;
-
-
-
-        //std::cout << "Desila se desna rotacija!" << std::endl;
-
-        x->balans = std::max(height(x->lijevi), height(x->desni));
-        y->balans = std::max(height(y->lijevi), height(y->desni));
-
-        if(y->rod == nullptr) {
-            korijen = y;
-        } else {
-            Cvor<TipKljuca, TipVrijednosti>* glavni = y->rod;
-            glavni->lijevi = y;
-        }
-
-        return y;
+  }
+  
+  ~AVLStabloMapa()
+  {
+    delete[] dstack;
+    obrisi();
+    delete[] pstack;
+  }
+  
+  int brojElemenata() const
+  {
+    return size_var;
+  }
+  
+  void obrisi()
+  {
+    node*** s=pstack, **p;
+    if(!root) return;
+    *(++s)=&root;
+    while(s!=pstack){
+      p=*s;
+      if((*p)->left)* (++s) = &((*p)->left);
+      else if((*p)->right)* (++s) = &((*p)->right);
+      else
+      {
+        delete* p;
+        *p=0;
+        s--;
+      }
     }
+    root=0;
+    size_var=0;
+  }
+  
+  void obrisi(const TipKljuca);
+  
+  TipVrijednosti operator[](const TipKljuca k) const
+  {
+    node* temp=find(k);
+    if(temp==nullptr) return TipVrijednosti();
+    return temp->value;
+  }
+  
+  TipVrijednosti& operator [](TipKljuca k)
+  {
+    node* temp = find(k);
+    if(temp==nullptr) insert(k);
+    temp=find(k);
+    return temp->value;
+  }
 
-    Cvor<TipKljuca, TipVrijednosti>* leftRotate(Cvor<TipKljuca, TipVrijednosti>* &x) {
-        Cvor<TipKljuca, TipVrijednosti> *y = x->desni;
-        Cvor<TipKljuca, TipVrijednosti> *T2 = y->lijevi;
-
-
-
-        y->lijevi = x;
-        x->desni = T2;
-        y->rod = x->rod;
-        if (x != nullptr) x->rod = y;
-        if (T2 != nullptr) T2->rod = x;
-
-
-        x->balans = std::max(height(x->lijevi), height(x->desni));
-        y->balans = std::max(height(y->lijevi), height(y->desni));
-
-        if (y->rod == nullptr) {
-            korijen = y;
-        } else {
-            Cvor<TipKljuca, TipVrijednosti> *glavni = y->rod;
-            glavni->desni = y;
-        }
-
-        return x;
-    }
-
-
-
-    void azurirajStabloDodavanje(Cvor<TipKljuca, TipVrijednosti>* &cvor, Cvor<TipKljuca, TipVrijednosti>* &roditelj) {
-        Cvor<TipKljuca, TipVrijednosti>* x = cvor;
-        if(x == nullptr) return;
-        if(roditelj == nullptr) return;
-        Cvor<TipKljuca, TipVrijednosti>* z = roditelj;
-        if(x == z->lijevi) {
-            z->balans++;
-        } else z->balans--;
-
-        bool desiloSe = false;
-        int balance = getBalans(x);
-        if (balance > 1 && z->kljuc < z->lijevi->kljuc) {
-            desiloSe = true;
-            rightRotate(z);
-        }
-        if (balance < -1 && z->kljuc > z->desni->kljuc) {
-            desiloSe = true;
-            leftRotate(z);
-        }
-        if (balance > 1 && z->kljuc > z->lijevi->kljuc) {
-            desiloSe = true;
-            z->lijevi = leftRotate(z->lijevi);
-            rightRotate(z);
-        }
-        if (balance < -1 && z->kljuc < z->desni->kljuc) {
-            desiloSe = true;
-            z->desni = rightRotate(z->desni);
-            leftRotate(z);
-        }
-
-        if(!desiloSe) azurirajStabloDodavanje(z, z->rod);
-    }
-
-
-    void umetniBST(Cvor<TipKljuca, TipVrijednosti>* &prviKorjen, Cvor<TipKljuca, TipVrijednosti>* &cvorN) {
-        Cvor<TipKljuca, TipVrijednosti>* y = nullptr;
-        Cvor<TipKljuca, TipVrijednosti>* x = prviKorjen;
-        while(x != nullptr) {
-            y = x;
-            if(cvorN->kljuc < x->kljuc)x = x->lijevi;
-            else x = x->desni;
-        }
-
-        if(y == nullptr) prviKorjen = cvorN;
-        else {
-            if(cvorN->kljuc < y->kljuc) y->lijevi = cvorN;
-            else y->desni = cvorN;
-        }
-        cvorN->rod = y;
-
-        if(y != nullptr && y->lijevi != nullptr && y->desni != nullptr) {
-            y->balans = 0;
-        } else azurirajStabloDodavanje(x, y);
-    }
-
-public:
-    AVLStabloMapa() {
-        korijen=nullptr;
-        brojEl=0;
-    }
-    AVLStabloMapa(const AVLStabloMapa<TipKljuca, TipVrijednosti> &b ) : korijen(nullptr), brojEl(0) {
-        kopirajBST(korijen, b.korijen);
-    }
-    AVLStabloMapa<TipKljuca, TipVrijednosti> &operator=(const AVLStabloMapa<TipKljuca, TipVrijednosti> &b) {
-        if (this==&b) return *this;
-        obrisiSve(korijen);
-        brojEl = 0;
-        korijen = nullptr;
-        kopirajBST(korijen, b.korijen);
-        return *this;
-    }
-    ~AVLStabloMapa() {
-        obrisiSve(korijen);
-        korijen = nullptr;
-        brojEl = 0;
-    }
-    TipVrijednosti &operator[] (TipKljuca k) {
-        Cvor<TipKljuca, TipVrijednosti> *pomoc = pretragaBST(k, korijen);
-        if(pomoc == nullptr) {
-            pomoc = new Cvor<TipKljuca, TipVrijednosti>();
-            pomoc->kljuc = k;
-            pomoc->lijevi = nullptr;
-            pomoc->desni = nullptr;
-            pomoc->balans = 0;
-            pomoc->vrijednost = TipVrijednosti();
-            umetniBST(korijen, pomoc);
-            brojEl++;
-        }
-        return pomoc->vrijednost;
-    }
-    TipVrijednosti  operator[] (TipKljuca k) const {
-        Cvor<TipKljuca, TipVrijednosti> *pomoc = pretragaBST(k, korijen);
-        if (pomoc == nullptr) return TipVrijednosti();
-        else return pomoc->vrijednost;
-    }
-    void obrisi() {
-        obrisiSve(korijen);
-        korijen = nullptr;
-        brojEl = 0;
-    }
-    void obrisi(const TipKljuca &k) {
-        Cvor<TipKljuca, TipVrijednosti> *pomoc = nullptr;
-        pretragaBST(k, korijen, pomoc);
-        if(pomoc != nullptr) {
-            brisiCvorBST(pomoc->kljuc, korijen);
-            pomoc = nullptr;
-            brojEl--;
-        }
-    }
-    int brojElemenata() const {
-        return brojEl;
-    }
-};
-
-// Binarno stablo
-template <typename TipKljuca, typename TipVrijednosti>
-class BinStabloMapa : public Mapa<TipKljuca, TipVrijednosti> {
-    Cvor<TipKljuca, TipVrijednosti> *korijen;
-    int brojEl;
-    Cvor<TipKljuca, TipVrijednosti>* &pretragaBST(const TipKljuca &k, Cvor<TipKljuca, TipVrijednosti>* &noviKorjen, Cvor<TipKljuca, TipVrijednosti>* &p) {
-        p = noviKorjen;
-        while(p != nullptr && k != p->kljuc){
-            if(k < p->kljuc){
-                p = p->lijevi;
-            }
-            else  p = p->desni;
-        }
-        return p;
-    }
-    Cvor<TipKljuca, TipVrijednosti>* pretragaBST(const TipKljuca &k, Cvor<TipKljuca, TipVrijednosti>* noviKorjen) const {
-        while(noviKorjen != nullptr && k != noviKorjen->kljuc){
-            if(k < noviKorjen->kljuc){
-                noviKorjen = noviKorjen->lijevi;
-            }
-            else  noviKorjen = noviKorjen->desni;
-        }
-        return noviKorjen;
-    }
-
-    bool brisiCvorBST(const TipKljuca &k, Cvor<TipKljuca, TipVrijednosti>* &noviKorjen) {
-        Cvor<TipKljuca, TipVrijednosti>* p = noviKorjen;
-        Cvor<TipKljuca, TipVrijednosti>* roditelj = nullptr;
-
-        while(p != nullptr && k != p->kljuc){
-            roditelj = p;
-            if(k < p->kljuc) p = p->lijevi;
-            else p = p->desni;
-        }
-        if( p == nullptr) return false;
-
-        Cvor<TipKljuca, TipVrijednosti>* m = nullptr;
-        Cvor<TipKljuca, TipVrijednosti>* pm = nullptr;
-        Cvor<TipKljuca, TipVrijednosti>* tmp = nullptr;
-        if(p->lijevi == nullptr){
-            m = p->desni;
-        }
-        else if (p->desni == nullptr){
-            m = p->lijevi;
-        }
-        else {
-            pm = p;
-            m = p->lijevi;
-            tmp = m->desni;
-            while(tmp != nullptr){
-                pm = m;
-                m = tmp;
-                tmp = m->desni;
-            }
-            if(pm != p ){
-                pm->desni = m->lijevi;
-                m->lijevi = p->lijevi;
-            }
-            m->desni = p->desni;
-        }
-        if(roditelj == nullptr) noviKorjen = m;
-        else {
-            if(p == roditelj->lijevi) {
-                roditelj->lijevi = m;
-            }
-            else {
-                roditelj->desni = m;
-            }
-        }
-        if(m != nullptr) m->rod = roditelj;
-        delete p;
-        p = nullptr;
-        return true;
-    }
-
-    void obrisiSve(Cvor<TipKljuca, TipVrijednosti>* &korje) {
-        Cvor<TipKljuca, TipVrijednosti>* noviKorjen = korje;
-        if(noviKorjen == nullptr) return;
-        obrisiSve(korje->lijevi);
-        obrisiSve(korje->desni);
-        delete noviKorjen;
-    }
-    void kopirajBST(Cvor<TipKljuca, TipVrijednosti>* &prviKorjen, Cvor<TipKljuca, TipVrijednosti>* drugiKorjen){
-        if (drugiKorjen == nullptr) return;
-
-        Cvor<TipKljuca, TipVrijednosti>* p = drugiKorjen;
-
-        prviKorjen = new Cvor<TipKljuca, TipVrijednosti>();
-        prviKorjen->kljuc = p->kljuc;
-        prviKorjen->vrijednost = p->vrijednost;
-        prviKorjen->lijevi = nullptr;
-        prviKorjen->desni = nullptr;
-        
-        kopirajBST(prviKorjen->lijevi, p->lijevi);
-        kopirajBST(prviKorjen->desni, p->desni);
-        if(prviKorjen->lijevi != nullptr) prviKorjen->lijevi->rod = prviKorjen;
-        if(prviKorjen->desni  != nullptr) prviKorjen->desni->rod = prviKorjen;
-        brojEl++;
-    } 
-    void umetniBST(Cvor<TipKljuca, TipVrijednosti>* &prviKorjen, Cvor<TipKljuca, TipVrijednosti>* &cvorN){
-        Cvor<TipKljuca, TipVrijednosti>* y = nullptr;
-        Cvor<TipKljuca, TipVrijednosti>* x = prviKorjen;
-        while(x != nullptr){
-            y = x;
-            if(cvorN->kljuc < x->kljuc)x = x->lijevi;
-            else x = x->desni;
-        }
-        if(y == nullptr) prviKorjen = cvorN;
-        else {
-            if(cvorN->kljuc < y->kljuc) y->lijevi = cvorN;
-            else y->desni = cvorN;
-        }
-        cvorN->rod = y;
-    }
-public:
-    BinStabloMapa() { korijen=nullptr; brojEl=0; }
-    BinStabloMapa(const BinStabloMapa<TipKljuca, TipVrijednosti> &b ) : korijen(nullptr), brojEl(0) {
-        kopirajBST(korijen, b.korijen);
-    }
-    BinStabloMapa<TipKljuca, TipVrijednosti> &operator=(const BinStabloMapa<TipKljuca, TipVrijednosti> &b) {
-        if (this==&b) return *this;
-        obrisiSve(korijen);
-        brojEl = 0;
-        korijen=nullptr;
-        kopirajBST(korijen, b.korijen);
-        return *this;
-    }
-    ~BinStabloMapa() { obrisiSve(korijen); korijen = nullptr; brojEl = 0; }
-    TipVrijednosti &operator[] (TipKljuca k) {
-        Cvor<TipKljuca, TipVrijednosti> *pomoc = pretragaBST(k, korijen);
-        if(pomoc == nullptr){
-            pomoc = new Cvor<TipKljuca, TipVrijednosti>();
-            pomoc->kljuc = k;
-            pomoc->lijevi = nullptr;
-            pomoc->desni = nullptr;
-            pomoc->vrijednost = TipVrijednosti();
-            umetniBST(korijen, pomoc);
-            brojEl++;
-        }
-        return pomoc->vrijednost;
-    }
-    TipVrijednosti  operator[] (TipKljuca k) const {
-        Cvor<TipKljuca, TipVrijednosti> *pomoc = pretragaBST(k, korijen);
-        if (pomoc == nullptr) return TipVrijednosti();
-        else return pomoc->vrijednost;
-    }
-    void obrisi() {
-        obrisiSve(korijen);
-        korijen = nullptr;
-        brojEl = 0;
-    }
-    void obrisi(const TipKljuca &k) {
-        Cvor<TipKljuca, TipVrijednosti> *pomoc = nullptr;
-        pretragaBST(k, korijen, pomoc);
-        if(pomoc != nullptr) {
-            brisiCvorBST(pomoc->kljuc, korijen);
-            pomoc = nullptr;
-            brojEl--;
-        } 
-    }
-    int brojElemenata() const { return brojEl; }
+ 
 };
 
 
-
-
-int main()
+template<typename TipKljuca, typename TipVrijednosti>
+void AVLStabloMapa<TipKljuca,TipVrijednosti>::obrisi(const TipKljuca d)
 {
-    // testiranje efikasnost binarnog i avl stabla
-    AVLStabloMapa <int, int> m;
-    BinStabloMapa <int, int> b;
-    
-    clock_t vrijeme1 = clock();
-    int vel = 100;
-    for (int i(0); i<vel; i++) {
-        m[i] = i;                 // trpanje podataka u avl
+  node*** s=pstack, **p=&root, *t;
+  bool* b=dstack;
+  
+  while(*p){
+    *(++s)=p;
+    if((*(++b)=(d<(*p)->kljuc)))
+        p=&((*p)->left);
+    else if(!(d==(*p)->kljuc))
+        p=&((*p)->right);
+    else break;
+  }
+  
+  if(!(*p)) return;
+  size_var--;
+  
+  if(!(*p)->left)
+  {
+    t=*p;
+    *p=(*p)->right;
+    delete t;
+    b--;
+    s--;
+  }
+  
+  else if(!(*p)->right)
+  {
+    t=*p;
+    *p=(*p)->left;
+    delete t;
+    b--;
+    s--;
+  }
+  else
+  {
+    node** r = p, ***w=s+1;
+    p=&((*p)->right);
+    while((*p)->left){
+      *(++s) = p;
+      *(++b) = true;
+      p=&((*p)->left);
     }
     
-    clock_t vrijeme2 = clock();
-    int ukvrijeme1 = (vrijeme2 - vrijeme1) / (CLOCKS_PER_SEC / 1000);
-    std::cout << "Vrijeme izvrsenja dodavanja rng elemenata (prosjecan slucaj) - avl: " << ukvrijeme1 << " ms." << std::endl; 
-    
-    for (int i(0); i<vel; i++) {
-        b[i] = i;                 // trpanje podataka u binarno
+    t=*p;
+    *p=(*p)->right;
+    t->balance=(*r)->balance;
+    t->left=(*r)->left;
+    t->right=(*r)->right;
+    delete* r;
+    *r=t;
+    *w=&(t->right);
+  }
+  
+  while(s!=pstack){
+    p=*s;
+    if(*b)
+    {
+      if((*p)->balance==1)
+      {
+        if((*p)->right->balance!=-1){
+          AVL_RR_rotate(p);
+          if((*p)->balance) return;
+        }
+        else AVL_RL_rotate(p);
+      }
+      else if(++(*p)->balance) return;
     }
+    else
+    {
+      if((*p)->balance == -1){
+        if((*p)->left->balance!=1){
+          AVL_LL_rotate(p);
+          if((*p)->balance) return;
+        }
+        else AVL_LR_rotate(p);
+      }
+      else if(--(*p)->balance) return;
+    }
+    b--;
+    s--;
+  }
+  return;
+  
+}
+
+template<typename TipKljuca, typename TipVrijednosti>
+class BinStabloMapa: public Mapa<TipKljuca,TipVrijednosti>
+{
+  
+  struct Cvor
+  {
+      TipKljuca key;
+      TipVrijednosti value;
+      Cvor* desni=nullptr;
+      Cvor* lijevi=nullptr;
+      Cvor* parent=nullptr;
+      Cvor(TipKljuca k1, TipVrijednosti p1, Cvor* desni1, Cvor* lijevi1, Cvor* parent1): key(k1), value(p1), desni(desni1), lijevi(lijevi1), parent(parent1){}
+     
+  };
+  
+  Cvor* root;
+  int brElemenata;
+  
+  void tempObrisi(Cvor* r)
+  {
+      if(r!=nullptr)
+      {
+          tempObrisi(r->desni);
+          tempObrisi(r->lijevi);
+          delete r;
+      }
+  }
+  
+  Cvor* nadjiCvor(const TipKljuca &k, Cvor* r) const
+  {
+      if(r==nullptr || k==r->key) return r;
+      else if(k>r->key) r=nadjiCvor(k, r->desni);
+      else
+      {
+          r=nadjiCvor(k, r->lijevi);
+      }
+  }
+  
+  Cvor* NadjiMax(Cvor* r)
+  {
+      if(r->desni == nullptr) return r;
+      NadjiMax(r->desni);
+  }
+  
+  Cvor* obrisiCvor(Cvor* &r, TipKljuca k)  //rekurzija at her peak, ugl stvara se bruku ovih r->lijevi r->desni pokazivaca al sve OK radi! GLAVNA FUNKCIJA
+  {
+      if(r==nullptr) return r;
+      else if(k>r->key) r->desni=obrisiCvor(r->desni, k);     //lociramo trazeni cvor
+      else if(k<r->key) r->lijevi=obrisiCvor(r->lijevi, k);
+      else
+      {
+          if(r->desni==nullptr && r->lijevi==nullptr) //kad je cvor koji se briše list, odnosno nema djece
+          {
+              delete r;
+              r=nullptr;
+          }
+          else if(r->desni==nullptr)        //po jedno dijete
+          {
+              Cvor* temp = r;
+              r=r->lijevi;          //u liniju 69 ili 70 će vratiti/prespojiti izbrisani element
+              delete temp;
+          }
+          else if(r->lijevi == nullptr)  //po jedno dijete
+          {
+              Cvor* temp=r;
+              r=r->desni;
+              delete temp;
+          }
+          else      // dvoje djece
+          {
+              Cvor *temp=NadjiMax(r->lijevi); //nadjemo maximum u lijevom podstablu i swappamo ga sa elementom koji se brise
+              r->key=temp->key;
+              r->value=temp->value;     
+              r->lijevi=obrisiCvor(r->lijevi, temp->key); //brisemo maximum u lijevom podstablu elementa koji se brise
+          }
+      }
+      return r;
+  }
+  
+  Cvor* dodajCvor(TipKljuca k, TipVrijednosti t, Cvor* &r, Cvor* roditelj)
+  {
+      if(r==nullptr)
+      {
+          r=new Cvor(k, t, nullptr, nullptr, r);
+          brElemenata++;
+          return r;
+      }
+      else if(k>r->key) return dodajCvor(k, t, r->desni, r); //dodajemo desno od roota
+      else return dodajCvor(k,t,r->lijevi, r);              //dodajemo lijevo od roota
+  }
+  
+  void iskopirajMapu(Cvor* &first, Cvor* second, Cvor* roditelj)
+  {
+      if(second==nullptr) return;
+      first=new Cvor(second->key, second->value, nullptr, nullptr, roditelj);
+      iskopirajMapu(first->desni, second->desni, first);
+      iskopirajMapu(first->lijevi, second->lijevi, first);
+  }
+  
+  
+public:
+
+  BinStabloMapa()
+  {
+      root=nullptr;
+      brElemenata=0;
+  }
+  
+  ~BinStabloMapa()
+  {
+      this->obrisi();
+  }
+  
+  BinStabloMapa(const BinStabloMapa<TipKljuca,TipKljuca> &temp)
+  {
+      iskopirajMapu(root, temp.root, nullptr);
+      brElemenata=temp.brElemenata;
+  }
+  
+  BinStabloMapa& operator=(const BinStabloMapa<TipKljuca,TipVrijednosti> &temp)
+  {
+      if(this==&temp) return *this;
+      this->obrisi();
+      iskopirajMapu(root, temp.root, nullptr);
+      brElemenata=temp.brElemenata;
+      return *this;
+  }
+  
+  void obrisi()
+  {
+      tempObrisi(root);
+      brElemenata=0;
+      root=nullptr;
+  }
+  
+  void obrisi(TipKljuca k)
+  {
+      obrisiCvor(root, k);
+      brElemenata--;
+  }
+  
+  TipVrijednosti operator[](const TipKljuca k) const
+  {
+      Cvor* temp=nadjiCvor(k, root);
+      if(temp==nullptr) return TipVrijednosti();
+      return temp->value;
+  }
+  
+  TipVrijednosti& operator[](TipKljuca k)
+  {
+      Cvor* temp=nadjiCvor(k, root);
+      if(temp==nullptr) temp = dodajCvor(k, TipVrijednosti(), root, nullptr);
+      return temp->value;
+  }
+  
+  int brojElemenata() const
+  {
+      return brElemenata;
+  }
+ 
+};
+
+
+
+
+
+int main() {
+    std::vector<int> randomize;
+    for(int i=0; i<=500000; i++) randomize.push_back(rand()%3000);
+    BinStabloMapa<int,int> treeMapa;
+    AVLStabloMapa<int,int> nMapa;
     
-    clock_t vrijeme4 = clock();
-    int ukvrijeme2 = (vrijeme4 - vrijeme2) / (CLOCKS_PER_SEC / 1000);
-    std::cout << "Vrijeme izvrsenja dodavanja rng elemenata (prosjecan slucaj) - binarno: " << ukvrijeme2 << " ms." << std::endl;
+    clock_t tajm1=clock();
+    for(int i=0; i<randomize.size(); i++)
+    {
+      treeMapa[randomize[i]]=i*3;
+    }
+    clock_t tajm2=clock();
+    int sum1=(tajm2-tajm1)/(CLOCKS_PER_SEC/1000);
+    std::cout<<"Za dodavanje 500000 elemenata u BinStabloMapu, bilo je potrebno "<<sum1<<" ms.\n";
     
-    // Dodavanje i brisanje novih cvorova treba biti brze za avl u odnosu na binarno
+    clock_t tajm3=clock();
+    for(int i=0; i<randomize.size(); i++)
+    {
+      nMapa[randomize[i]]=i*3;
+    }
+    clock_t tajm4=clock();
+    int sum2=(tajm4-tajm3)/(CLOCKS_PER_SEC/1000);
+    std::cout<<"Za dodavanje 500000 elemenata u AVLStabloMapu, bilo je potrebno "<<sum2<<" ms.\n";
     
-    return 0;
+    clock_t tajm5=clock();
+    for(int i=0; i<randomize.size(); i++)
+    {
+      treeMapa[randomize[i]];
+    }
+    clock_t tajm6=clock();
+    int sum3=(tajm6-tajm5)/(CLOCKS_PER_SEC/1000);
+    std::cout<<"Za pristup elementima BinStabloMape bilo je potrebno "<<sum3<<" ms.\n";
+    
+    clock_t tajm7=clock();
+    for(int i=0; i<randomize.size(); i++)
+    {
+      nMapa[randomize[i]];
+    }
+    clock_t tajm8=clock();
+    int sum4=(tajm8-tajm7)/(CLOCKS_PER_SEC/1000);
+    std::cout<<"Za pristup elementima AVLStabloMape bilo je potrebno "<<sum4<<" ms.\n";
+    
+    
+    
+    
+    
+    clock_t tajm9=clock();
+    for(int i=0; i<randomize.size(); i++)
+    {
+      treeMapa.obrisi(randomize[i]);
+    }
+    clock_t tajm10=clock();
+    int sum5=(tajm10-tajm9)/(CLOCKS_PER_SEC/1000);
+    std::cout<<"Za brisanje elemenata BinStabloMape bilo je potrebno "<<sum5<<" ms.\n";
+    
+    clock_t tajm11=clock();
+    for(int i=0; i<randomize.size(); i++)
+    {
+      nMapa.obrisi(randomize[i]);
+    }
+    clock_t tajm12=clock();
+    int sum6=(tajm12-tajm11)/(CLOCKS_PER_SEC/1000);
+    std::cout<<"Za brisanje elemenata AVLStabloMape bilo je potrebno "<<sum6<<" ms.\n";
+    
+    //rezultati su ocekivani, razlika je primjetna odnosno uocavamo da je AVLstabloMapa 2x brža od binarnog stabla što se tiče dodavanja i pristupa elementima,
+    //razlika bi bila još primjetnija da nismo dodavali random elemente već npr običnu for petlju do 300k, jer bi tada binStabloMapa bila ustvari obična lista
+    //dok bi se AVLStabloMapa balansiralo i opet bi ostajalo s kompeksnošću O(logn) za razliku od BinStabloMape koja bi bila O(n)!
+    //Izvedba AVL stabla je malo čudna jer sam prvo pokušao rekurzivno pa su padali stres testovi, al sam onda uspio implementirati iterativno
+    //i prošli su svi autotestovi, fakat rekurzivna implementacija nije zadovoljavajuća jer je kompleksnost O(log^2(n)) umjesto O(logn).
+    //by huso
 }

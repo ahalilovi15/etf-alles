@@ -38,7 +38,7 @@
 - Mirza Učanbarlić
   - added the `/numerical-algorithms` section
 - Huso Hamzić 
-  - upgraded `/introduction-to-programming`, `/programming-tehniques`, `/development-of-software-solutions` sections
+  - upgraded `/introduction-to-programming`, `/programming-tehniques`, `/development-of-software-solutions`, `/algorithms-data-structures`, `/numerical-algorithms` sections
 - Faris Poljčić 
   - added the `/cad-cam-engineering` section
 - Mirza Šehalić 
