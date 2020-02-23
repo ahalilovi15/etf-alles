@@ -14,6 +14,7 @@
 - Automata and formal languages 2017/2018 - Task
 - Object oriented analysis and design 2017/2018 - Project
 - Cad cam engineering 2018/2019 - Tutorials
+- Embedded systems 2018/2019 - Tutorials
 - Basics of operational research 2018/2019 - Labs / Tasks
 - Basics of information systems 2018/2019 - Project
 - Engineering economics 2018/2019 - Tutorials
@@ -35,6 +36,8 @@
 
 ## Contributors
 #### If you see these people, buy them a beer, chocolate or just hug them:
+- Rijad Fejzić
+  - added the `/embedded-systems` section
 - Mirza Učanbarlić
   - added the `/numerical-algorithms` section
 - Huso Hamzić 
