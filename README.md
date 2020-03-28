@@ -50,9 +50,11 @@
 ## Contributors
 #### If you see these people, buy them a beer, chocolate or just hug them:
 - Rijad Fejzić
-  - added the `/embedded-systems` section
+  - added the following sections:
+    - `/embedded-systems` 
 - Mirza Učanbarlić
-  - added the `/numerical-algorithms` section
+  - added the following sections:
+    - `/numerical-algorithms`
 - Huso Hamzić 
   - upgraded the following sections:
     - `/introduction-to-programming`, 
@@ -61,14 +63,17 @@
     - `/algorithms-data-structures`, 
     - `/numerical-algorithms`
 - Faris Poljčić 
-  - added the `/cad-cam-engineering` section
+  - added the following sections:
+    - `/cad-cam-engineering`
 - Mirza Šehalić 
-  - added the `/engineering-economics` section, 
+  - added the following sections:
+    - `/engineering-economics`
   - upgraded the following sections: 
     - `/discrete-mathematics`, 
     - `/database-basics`
 - Nermin Krdžić 
-  - upgraded the `/development-of-software-solutions` section
+  - upgraded the following sections:
+    - `/development-of-software-solutions`
 - Haris Mašović 
   - owner of the repository, added most of the stuff
 
