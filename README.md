@@ -64,7 +64,9 @@
   - added the `/cad-cam-engineering` section
 - Mirza Šehalić 
   - added the `/engineering-economics` section, 
-  - upgraded `/discrete-mathematics`, `/database-basics` sections
+  - upgraded the following sections: 
+    - `/discrete-mathematics`, 
+    - `/database-basics`
 - Nermin Krdžić 
   - upgraded the `/development-of-software-solutions` section
 - Haris Mašović 
