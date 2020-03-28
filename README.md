@@ -39,7 +39,7 @@
 ### VII semester
 - Machine Learning 2019/2020 - Tutorials / Tasks
 - Advanced Algorithms and Data Structures 2019/2020 - Tutorials
-- Advanced Operating Systems - Project
+- Advanced Operating Systems 2019/2020 - Project
 
 
 ## Helping out - You want to upgrade this repository ?
