@@ -55,6 +55,8 @@
 - Mirza Učanbarlić
   - added the following sections:
     - `/numerical-algorithms`
+  - upgraded the following sections:
+    - `/development-of-software-solutions`
 - Huso Hamzić 
   - upgraded the following sections:
     - `/introduction-to-programming`, 
