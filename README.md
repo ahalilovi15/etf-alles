@@ -66,7 +66,7 @@
     - `III semester/numerical-algorithms`
 - Faris Poljčić 
   - added the following sections:
-    - `IV/cad-cam-engineering`
+    - `IV semester/cad-cam-engineering`
 - Mirza Šehalić 
   - added the following sections:
     - `IV semester/engineering-economics`
