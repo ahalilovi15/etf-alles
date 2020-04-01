@@ -51,31 +51,31 @@
 #### If you see these people, buy them a beer, chocolate or just hug them:
 - Rijad Fejzić
   - added the following sections:
-    - `/embedded-systems` 
+    - `IV semester/embedded-systems` 
 - Mirza Učanbarlić
   - added the following sections:
-    - `/numerical-algorithms`
+    - `III semester/numerical-algorithms`
   - upgraded the following sections:
-    - `/development-of-software-solutions`
+    - `III semester/development-of-software-solutions`
 - Huso Hamzić 
   - upgraded the following sections:
-    - `/introduction-to-programming`, 
-    - `/programming-tehniques`, 
-    - `/development-of-software-solutions`, 
-    - `/algorithms-data-structures`, 
-    - `/numerical-algorithms`
+    - `I semester/introduction-to-programming`, 
+    - `II semester/programming-tehniques`, 
+    - `III semester/development-of-software-solutions`, 
+    - `III semester/algorithms-data-structures`, 
+    - `III semester/numerical-algorithms`
 - Faris Poljčić 
   - added the following sections:
-    - `/cad-cam-engineering`
+    - `IV/cad-cam-engineering`
 - Mirza Šehalić 
   - added the following sections:
-    - `/engineering-economics`
+    - `IV semester/engineering-economics`
   - upgraded the following sections: 
-    - `/discrete-mathematics`, 
-    - `/database-basics`
+    - `III semester/discrete-mathematics`, 
+    - `III semester/database-basics`
 - Nermin Krdžić 
   - upgraded the following sections:
-    - `/development-of-software-solutions`
+    - `III semester/development-of-software-solutions`
 - Haris Mašović 
   - owner of the repository, added most of the stuff
 
