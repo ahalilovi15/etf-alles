@@ -45,38 +45,6 @@
 ## Helping out - You want to upgrade this repository ?
 - If you want to help out, feel free to fork this repository and to add your own tasks/projects/anything useful
 - Also put in your pull request the evaluated results on those projects/tasks and the repository owner as the reviewer (in order to pass the pull request in some way)
-- After that, you will be added to the contributors list
-
-## Contributors
-#### If you see these people, buy them a beer, chocolate or just hug them:
-- Rijad Fejzić
-  - added the following sections:
-    - `IV semester/embedded-systems` 
-- Mirza Učanbarlić
-  - added the following sections:
-    - `III semester/numerical-algorithms`
-  - upgraded the following sections:
-    - `III semester/development-of-software-solutions`
-- Huso Hamzić 
-  - upgraded the following sections:
-    - `I semester/introduction-to-programming`, 
-    - `II semester/programming-tehniques`, 
-    - `III semester/development-of-software-solutions`, 
-    - `III semester/algorithms-data-structures`, 
-    - `III semester/numerical-algorithms`
-- Faris Poljčić 
-  - added the following sections:
-    - `IV semester/cad-cam-engineering`
-- Mirza Šehalić 
-  - added the following sections:
-    - `IV semester/engineering-economics`
-  - upgraded the following sections: 
-    - `III semester/discrete-mathematics`, 
-    - `III semester/database-basics`
-- Nermin Krdžić 
-  - upgraded the following sections:
-    - `III semester/development-of-software-solutions`
-- Haris Mašović 
-  - owner of the repository, added most of the stuff
+- After that, you will be added to the [contributors](https://github.com/MasovicHaris/etf-alles/blob/master/CONTRIBUTORS.md) list
 
 #### Note that the info part is in English, while all the projects are in Bosnian. #ad-populum
