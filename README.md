@@ -36,11 +36,14 @@
 - Administration of computer networks 2018/2019 - Tasks / Project documentation
 
 ## Master's
+
 ### VII semester
 - Machine Learning 2019/2020 - Tutorials / Tasks
 - Advanced Algorithms and Data Structures 2019/2020 - Tutorials
 - Advanced Operating Systems 2019/2020 - Project
 
+### VIII semester
+- Advanced web technologies 2019/2020 - [Project](https://github.com/MasovicHaris/event4u)
 
 ## Helping out - You want to upgrade this repository ?
 - If you want to help out, feel free to fork this repository and to add your own tasks/projects/anything useful
