@@ -43,7 +43,8 @@
 - Advanced Operating Systems 2019/2020 - Project
 
 ### VIII semester
-- Advanced web technologies 2019/2020 - [Project](https://github.com/MasovicHaris/event4u)
+- Advanced Web Technologies 2019/2020 - [Project](https://github.com/MasovicHaris/event4u)
+- tba..
 
 ## Helping out - You want to upgrade this repository ?
 - If you want to help out, feel free to fork this repository and to add your own tasks/projects/anything useful
